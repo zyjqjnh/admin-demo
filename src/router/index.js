@@ -4,6 +4,8 @@ import Home from '../views/Home'
 import Login from '../views/Login'
 import Table from '../views/nav1/Table'
 import Form from '../views/nav1/Form'
+import User from '../views/nav1/User'
+import Page4 from '../views/nav2/Page4'
 
 Vue.use(Router)
 
@@ -30,6 +32,24 @@ const router = new Router({
           path: '/form',
           component: Form,
           name: 'Form'
+        },
+        {
+          path: '/user',
+          component: User,
+          name: '列表'
+        }
+      ]
+    },
+    {
+      path: '/',
+      name: '导航二',
+      component: Home,
+      iconCls: 'fa fa-id-card-o',
+      children: [
+        {
+          path: '/page4',
+          component: Page4,
+          name: '页面4'
         }
       ]
     }
