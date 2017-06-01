@@ -9,6 +9,7 @@ import User from '../views/nav1/User'
 import Page4 from '../views/nav2/Page4'
 import Page5 from '../views/nav2/Page5'
 import Page6 from '../views/nav3/Page6'
+import Echarts from '../views/charts/echarts'
 
 Vue.use(Router)
 
@@ -78,6 +79,19 @@ const router = new Router({
           path: '/page6',
           component: Page6,
           name: '导航三'
+        }
+      ]
+    },
+    {
+      path: '/',
+      name: 'Charts',
+      component: Home,
+      iconCls: 'fa fa-bar-chart',
+      children: [
+        {
+          path: 'echarts',
+          component: Echarts,
+          name: 'echarts'
         }
       ]
     },
