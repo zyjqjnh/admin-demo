@@ -2,10 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home'
 import Login from '../views/Login'
+import NotFound from '../views/404'
 import Table from '../views/nav1/Table'
 import Form from '../views/nav1/Form'
 import User from '../views/nav1/User'
 import Page4 from '../views/nav2/Page4'
+import Page5 from '../views/nav2/Page5'
+import Page6 from '../views/nav3/Page6'
 
 Vue.use(Router)
 
@@ -15,6 +18,12 @@ const router = new Router({
       path: '/login',
       name: '',
       component: Login,
+      hidden: true
+    },
+    {
+      path: '/404',
+      name: '',
+      component: NotFound,
       hidden: true
     },
     {
@@ -50,8 +59,32 @@ const router = new Router({
           path: '/page4',
           component: Page4,
           name: '页面4'
+        },
+        {
+          path: '/page5',
+          component: Page5,
+          name: '页面5'
         }
       ]
+    },
+    {
+      path: '/',
+      name: '',
+      component: Home,
+      iconCls: 'fa fa-address-card',
+      leaf: true,
+      children: [
+        {
+          path: '/page6',
+          component: Page6,
+          name: '导航三'
+        }
+      ]
+    },
+    {
+      path: '*',
+      hidden: true,
+      redirect: { path: '/404' }
     }
   ]
 })
